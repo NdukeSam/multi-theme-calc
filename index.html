@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" id="switcher-id" href="">
+
+  
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body id="font" class="body_1">
+
+  <div class="centered">
+
+    <section id="top">
+      <div class="title"><p>calc</p></div>
+      <div class="ctrls">
+        <div class="theme">THEME</div>
+        <div class="switch"><div class="numbers"><span class="d-1">1</span><span class="d-2">2</span><span class="d-3">3</span></div>
+        <div class="switch_scroll">
+          <input checked type="radio" data-theme="default" class="switch" id="switch-1" name="toggle" value="false">
+          <input type="radio" data-theme="light" class="switch" id="switch-2" name="toggle" value="-1">
+          <input type="radio" data-theme="purple" class="switch" id="switch-3" name="toggle" value="true">
+          <span></span>
+        </div>
+        </div>
+      </div>
+    </section>
+    <div class="calculator">
+      <!-- display area -->
+    <section id="display_area" class="display_area">
+      <div class="digit_display">
+        <span id="calc_display"></span>
+      </div>
+    </section>
+      <!-- calculator keys -->
+    <section class="btn_area calc-keys">
+      <section id="btn_area" >
+        <button class="btn" value="7" id="btn_7">7</button>
+        <button class="btn" value="8" id="btn_8">8</button>
+        <button class="btn" value="9" id="btn_9">9</button>
+        <button class="btn btn_del" data-action="delete">del</button>
+        <button class="btn" value="4" id="btn_4">4</button>
+        <button class="btn" value="5" id="btn_5">5</button>
+        <button class="btn" value="6" id="btn-6">6</button>
+        <button class="btn key--operator" data-action="add">+</button>
+        <button class="btn" value="1" id="btn_1">1</button>
+        <button class="btn" value="2" id="btn_2">2</button>
+        <button class="btn" value="3" id="btn_3">3</button>
+        <button class="btn key--operator" value="-" data-action="subtract">-</button>
+        <button class="btn key--operator" value="." data-action="decimal">.</button>
+        <button class="btn" value="0"  id="btn_0">0</button>
+        <button class="btn key--operator" value="/" data-action="divide">/</button>
+        <button class="btn key--operator" data-action="multiply">&times;</button>
+      </section>
+      <div class="last_row">
+        <button class="btn btn_reset" data-action="clear">reset</button>
+        <button class="btn btn_equals key--equal" data-action="calculate">=</button>
+      </div>
+    </section>
+    </div>
+
+  </div>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Nduke Sam</a>.
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

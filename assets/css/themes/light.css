@@ -1,0 +1,43 @@
+/************ THEME 2 ***********/
+:root{
+    --back-color: hsl(0, 0%, 90%);
+    --text-color: #35352c;
+    --display-back: #eeeeee;
+    --display-text: #37372e;
+    --button-area: #d3cdcd;
+    --button-text: #3a3935;
+    --delete-reset-button: #388187;
+    --delete-reset-text: #efffff;
+    --equals-button: #c85400;
+    --equals-text: #edd1bc;
+
+}
+
+body{
+    background-color: var(--back-color);
+    color: var(--text-color);
+}
+
+.display_area{
+    background-color: var(--display-back);
+    color: var(--display-text);
+}
+
+#calc_digit{
+    color: var(--text-color);
+}
+
+.btn_area{
+    background-color: var(--button-area);
+    color: var(--button-text);
+}
+
+.btn_del, .btn_reset{
+    background-color: var(--delete-reset-button);
+    color: var(--delete-reset-text);
+}
+
+.btn_equals{
+    background-color: var(--equals-button);
+    color: var(--equals-text);
+}

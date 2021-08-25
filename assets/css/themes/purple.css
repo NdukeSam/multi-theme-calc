@@ -1,0 +1,44 @@
+/************ THEME 3 ***********/
+:root{
+    --back-color: #17062a;
+    --text-color: #f5dd48;
+    --display-back: #1e0836;
+    --display-text: #37372e;
+    --button-area: #1e0836;
+    --button-back: #331b4d;
+    --delete-reset-button: #55077e;
+    --delete-reset-text: #f8edf9;
+    --equals-button: #00decf;
+    --equals-text: #0d5c5a;
+
+}
+
+body{
+    background-color: var(--back-color);
+    color: var(--text-color)
+}
+
+.display_area{
+    background-color: var(--display-back);
+    color: var(--text-color);
+}
+
+.btn{
+    background-color: var(--button-back);
+    color: var(--text-color);
+}
+
+.btn_area{
+    background-color: var(--button-area);
+    color: var(--text-color);
+}
+
+.btn_del, .btn_reset{
+    background-color: var(--delete-reset-button);
+    color: var(--delete-reset-text);
+}
+
+.btn_equals{
+    background-color: var(--equals-button);
+    color: var(--equals-text);
+}

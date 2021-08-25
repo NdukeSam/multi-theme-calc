@@ -1,0 +1,231 @@
+:root{
+    --default: #e74c3c;
+    --purple: #61fff0;
+}
+
+@font-face {
+    font-family: 'cwg';
+    src: url('../../fonts/cwg sans.ttf');
+}
+
+#font{
+    font-family: 'cwg' , sans-serif;
+
+}
+
+
+body{
+    background-color: #3b4664;
+    color: #fff;
+    text-transform: lowercase;
+}
+
+.attribution {
+    position: absolute; 
+    bottom: 0%;
+    right: 40%;
+    font-size: 11px; 
+    text-align: center; 
+
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.centered{
+    margin: auto;
+    width: 40%;
+    border: 1px solid yellow;
+    padding: 20px;
+}
+
+#top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    display: flex;
+    align-self: flex-end;
+}
+
+.title p{
+    margin: 0px;
+    font-size: 24px;
+}
+
+.ctrls{
+    display: flex;
+    align-items: center;
+    column-gap: 28px;
+}
+
+.ctrls>*:first-child{
+    align-self: flex-end;
+    
+}
+
+.switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.switch_scroll{
+    position: relative;
+    display: inline-block;
+    padding: 2px 3px;
+    width: 79px;
+    height: 20px;
+    line-height: 56px;
+    border-radius: 24px;
+    background-color: #252d44;
+    margin-top: 8px;
+}
+
+.switch_scroll span{
+    height: 19px;
+    width: 19px;
+    line-height: 19px;
+    border-radius: 50%;
+    background: transparent;
+    display: block;
+    position: absolute;
+    left: 22px;
+    top: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.switch_scroll label{
+    text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    color: #95A5A6;
+    position:relative;
+    z-index:2;
+    margin: 0;
+    text-align: center;
+    padding: 2px 3px;
+    font-size: 15px;
+}
+
+.switch_scroll input{
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[value="true"]{
+    right: 8px;
+}
+
+input[value="-1"]{
+    right: 35px;
+}
+
+.switch_scroll input[value="false"]:checked ~ span{
+    background:var(--default);
+    left:3px;
+    color:#fff;
+  }
+  
+  .switch_scroll input[value="true"]:checked ~ span{
+    background: var(--purple);
+    left: 62px;
+  }
+  .switch_scroll input[value="-1"]:checked ~ span{
+    background:var(--default);
+    left: 30px;
+  }
+  
+  .switch_scroll input[value="false"]:checked + label,.switch_scroll input[value="true"]:checked + label{
+    color:#fff;
+  }
+  .switch_scroll input[value="-1"]:checked + label{
+    color:#fff;
+  }
+  
+
+
+.numbers span{
+    padding: 10px;
+    margin-bottom: 3px;
+}
+
+#display_area{
+    height: 100px;
+    width: 100%;
+    border-radius: 13px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.display_area{
+    background-color: #181f32;
+}
+
+.digit_display span{
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.btn{
+    background-color: #eae3db;
+    color: #3b4664;
+    padding: 15px;
+    margin: 12px 12px;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+
+}
+
+.btn {
+    font-family: 'cwg';
+    font-size: 29px;
+}
+
+.is-depressed{
+    opacity: 0.7;
+    box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+}
+
+.btn_del, .btn_reset{
+    background-color: #3b4664;
+    color: #eae3db;
+}
+
+.btn_equals{
+    background-color: #e74c3c;
+    color: #eae3db;
+}
+
+#btn_area{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2px 2px;
+    margin: 15px 10px 0px 10px;
+}
+
+.last_row{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-gap: 5px;
+
+}
+
+.btn_area{
+    background-color: #252d44;
+    margin-top: 20px;
+    border-radius: 13px;
+    width: 100%;
+}
+
+
+/********* MEDIA QUERIES *********/
+@media screen and (max-width: 780px) {
+    .centered{width: 80%;}  
+
+}
