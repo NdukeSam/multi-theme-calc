@@ -3,13 +3,14 @@
     --purple: #61fff0;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'cwg';
     src: url('../../fonts/cwg sans.ttf');
-}
+} */
 
 #font{
-    font-family: 'cwg' , sans-serif;
+    font-family: 'Spartan' , sans-serif;
+    font-weight: 700;
 
 }
 
@@ -17,13 +18,12 @@
 body{
     background-color: #3b4664;
     color: #fff;
-    text-transform: lowercase;
 }
 
 .attribution {
     position: absolute; 
-    bottom: 0%;
-    right: 40%;
+    bottom: -4%;
+    right: 30%;
     font-size: 11px; 
     text-align: center; 
 
@@ -182,7 +182,7 @@ input[value="-1"]{
 }
 
 .btn {
-    font-family: 'cwg';
+    font-family: 'Spartan', sans-serif;
     font-size: 29px;
 }
 
