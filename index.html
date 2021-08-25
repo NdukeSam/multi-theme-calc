@@ -42,25 +42,25 @@
       <!-- calculator keys -->
     <section class="btn_area calc-keys">
       <section id="btn_area" >
-        <button class="btn" value="7" id="btn_7">7</button>
-        <button class="btn" value="8" id="btn_8">8</button>
-        <button class="btn" value="9" id="btn_9">9</button>
-        <button class="btn btn_del" data-action="delete">del</button>
-        <button class="btn" value="4" id="btn_4">4</button>
-        <button class="btn" value="5" id="btn_5">5</button>
-        <button class="btn" value="6" id="btn-6">6</button>
-        <button class="btn key--operator" data-action="add">+</button>
-        <button class="btn" value="1" id="btn_1">1</button>
-        <button class="btn" value="2" id="btn_2">2</button>
-        <button class="btn" value="3" id="btn_3">3</button>
-        <button class="btn key--operator" value="-" data-action="subtract">-</button>
-        <button class="btn key--operator" value="." data-action="decimal">.</button>
-        <button class="btn" value="0"  id="btn_0">0</button>
-        <button class="btn key--operator" value="/" data-action="divide">/</button>
-        <button class="btn key--operator" data-action="multiply">&times;</button>
+        <button class="btn digits" value="7">7</button>
+        <button class="btn digits" value="8">8</button>
+        <button class="btn digits" value="9">9</button>
+        <button class="btn del" onclick="backspace()">del</button>
+        <button class="btn digits" value="4">4</button>
+        <button class="btn digits" value="5">5</button>
+        <button class="btn digits" value="6">6</button>
+        <button class="btn operators" value="+">+</button>
+        <button class="btn digits" value="1">1</button>
+        <button class="btn digits" value="2">2</button>
+        <button class="btn digits" value="3">3</button>
+        <button class="btn operators" value="-">-</button>
+        <button class="btn digits" value="." data-action="decimal">.</button>
+        <button class="btn digits" value="0">0</button>
+        <button class="btn operators" value="/">/</button>
+        <button class="btn operators" value="*">&times;</button>
       </section>
       <div class="last_row">
-        <button class="btn btn_reset" data-action="clear">reset</button>
+        <button class="btn btn_reset" onclick="reset()" data-action="clear">reset</button>
         <button class="btn btn_equals key--equal" data-action="calculate">=</button>
       </div>
     </section>
@@ -75,6 +75,7 @@
     Coded by <a href="#">Nduke Sam</a>.
   </div>
 
-  <script src="assets/js/script.js"></script>
+<!--  <script src="assets/js/script.js"></script>-->
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
