@@ -3,20 +3,23 @@ let display = document.getElementById('calc_display');
 const operators = document.getElementsByClassName('operators');
 let operator, firstValue, secondValue;
 let resetFirstValue = false
+let calculated = false
+let operatorPressed = false
 
 for (const digit of digits) {
     digit.addEventListener('click', e => {
         const value = e.target.value;
         writeToDisplay(value);
+        calculated = false
+        operatorPressed = false
     })
 }
 
 for (const opt of operators) {
     opt.addEventListener('click', e => {
-        const value = e.target.value;
-        operator = value
-        const displayValue = Number(display.innerText);
-        firstValue = displayValue && displayValue
+        !operatorPressed && calculate()
+        operator = e.target.value;
+        operatorPressed = true
     })
 }
 
@@ -39,11 +42,25 @@ function updateDisplay(value) {
 function reset() {
     updateDisplay('')
     operator = firstValue = secondValue = null
-    resetFirstValue = false
+    resetFirstValue = calculated = false
 }
 
 function backspace() {
     const newDisplay = display.innerText.slice(0, -1);
     updateDisplay(newDisplay);
+}
+
+function calculate() {
+    let secondValue = display.innerText
+    secondValue = Number(secondValue)
+    let result = firstValue && operator && secondValue ? eval(`${firstValue} ${operator} ${secondValue}`) : secondValue
+    resetFirstValue = false
+    if (result !== secondValue && !calculated) {
+        firstValue = result
+        updateDisplay(result)
+    }else {
+        firstValue = secondValue
+    }
+    calculated = result !== secondValue
 }
 
