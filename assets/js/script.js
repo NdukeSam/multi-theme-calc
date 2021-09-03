@@ -59,7 +59,7 @@ function addToStorage(item) {
 const digits = document.getElementsByClassName('digits');
 const display = document.querySelector('#calc_display');
 const operators = document.getElementsByClassName('operators');
-let firstValue, operator, secondValue;
+let firstValue, operator, secondValue, resetFirstValue;
 
 
 for (let digit of digits) {
@@ -72,17 +72,25 @@ for (let digit of digits) {
 for (const optor of operators) {
     optor.addEventListener('click', e => {
         const value = e.target.value;
-        operator = value;
-    })
+        const operator = value;
+        console.log(operator);
+    });
 }
 
 function writeDigit(value) {
     value = Number(value);
     let newValue = 0;
     let previousValue = Number(display.innerText); 
-    newValue = previousValue === 0 || value == 0 && value > 0 ? value : display.innerText += value 
+    newValue = previousValue === 0 || value == 0 && value > 0 ? value : display.innerText += value;
     console.log(newValue);
     
+    // const firstValue = newValue;
+    const firstValue = display.innerText;
+    if (firstValue) {
+        console.log(firstValue);
+        updateDisplay('');
+    }
+
     updateDisplay(newValue);
 }
 
