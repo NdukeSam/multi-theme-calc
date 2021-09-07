@@ -99,7 +99,7 @@ function resetAfterOperator() {
     if (firstValue && operator) {
         console.log(firstValue);
         updateDisplay('');
-        
+            
     }
 
 }
