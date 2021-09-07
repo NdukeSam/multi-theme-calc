@@ -59,7 +59,8 @@ function addToStorage(item) {
 const digits = document.getElementsByClassName('digits');
 const display = document.querySelector('#calc_display');
 const operators = document.getElementsByClassName('operators');
-let firstValue, operator, secondValue, resetFirstValue;
+let firstValue, operator, secondValue, 
+resetFirstValue;
 
 
 for (let digit of digits) {
@@ -71,8 +72,7 @@ for (let digit of digits) {
 
 for (const optor of operators) {
     optor.addEventListener('click', e => {
-        const value = e.target.value;
-        const operator = value;
+        operator = e.target.value;
         console.log(operator);
     });
 }
@@ -84,18 +84,24 @@ function writeDigit(value) {
     newValue = previousValue === 0 || value == 0 && value > 0 ? value : display.innerText += value;
     console.log(newValue);
     
-    // const firstValue = newValue;
-    const firstValue = display.innerText;
-    if (firstValue) {
-        console.log(firstValue);
-        updateDisplay('');
-    }
-
     updateDisplay(newValue);
+    resetAfterOperator();
 }
 
 function updateDisplay(value) {
     display.innerText = value;
+}
+
+function resetAfterOperator() {
+    const firstValue = display.innerText;
+    console.log(firstValue);
+    console.log(operator);
+    if (firstValue && operator) {
+        console.log(firstValue);
+        updateDisplay('');
+        
+    }
+
 }
 
 function resetScreen() {
