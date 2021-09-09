@@ -178,7 +178,6 @@ input[value="-1"]{
     border-radius: 12px;
     cursor: pointer;   
     font-family: 'Spartan', sans-serif;
-    font-size: 29px;
 
 }
 
@@ -193,14 +192,15 @@ input[value="-1"]{
 }
 
 .btn_reset, .btn_equals{
+    font-size: 1rem;
     grid-column: span 2;
 }
 
 #btn_area{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px 15px;
-    padding: 12px; 
+    grid-gap: 21px 15px;
+    padding: 20px 10px; 
 }
 
 .btn_area{
@@ -212,10 +212,24 @@ input[value="-1"]{
 
 
 /********* MEDIA QUERIES *********/
+
+
 @media screen and (max-width: 780px) {
     .centered{
         width: 80%;
         /* height: ; */
     }  
+
+    body{
+        font-size: 1rem;
+    }
+
+}
+@media screen and (min-width: 1024px) {
+
+
+    .btn{
+        font-size: 29px;
+    }
 
 }
