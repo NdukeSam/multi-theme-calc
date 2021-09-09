@@ -217,11 +217,11 @@ input[value="-1"]{
 @media screen and (max-width: 780px) {
     .centered{
         width: 80%;
-        /* height: ; */
+        margin-top: 100px;
     }  
 
-    body{
-        font-size: 1rem;
+    .btn{
+        font-size: 1.4rem;
     }
 
 }
