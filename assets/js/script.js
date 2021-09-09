@@ -66,49 +66,65 @@ resetFirstValue;
 for (let digit of digits) {
        digit.addEventListener('click', e => {
        const value = e.target.value;
+      if (resetFirstValue) {
+        firstValue = display.innerText;
+        updateDisplay('');
+        resetFirstValue = false;
+      }
     writeDigit(value);
+
+  
     });
    }
 
 for (const optor of operators) {
     optor.addEventListener('click', e => {
+        calculate();
         operator = e.target.value;
         console.log(operator);
+        resetFirstValue = true;
     });
 }
 
 function writeDigit(value) {
-    value = Number(value);
+    console.log(value);
+    if (value === '.') {
+        if (display.innerText === '.') {
+            return false;
+        }
+    }else{
+        value = Number(value);
+    }
+    console.log(value);
     let newValue = 0;
     let previousValue = Number(display.innerText); 
-    newValue = previousValue === 0 || value == 0 && value > 0 ? value : display.innerText += value;
-    console.log(newValue);
-    
+    newValue = previousValue === 0 && value !='0.' && value < 1 ? value : display.innerText += value;
+    console.log(firstValue, operator, secondValue);
+
     updateDisplay(newValue);
-    resetAfterOperator();
 }
 
 function updateDisplay(value) {
     display.innerText = value;
 }
 
-function resetAfterOperator() {
-    const firstValue = display.innerText;
-    console.log(firstValue);
-    console.log(operator);
-    if (firstValue && operator) {
-        console.log(firstValue);
-        updateDisplay('');
-            
-    }
-
-}
-
 function resetScreen() {
    updateDisplay('');
+   firstValue = secondValue = result = null;
 }
 
 function del() {
     const newDisplay = display.innerText.slice(0, -1);
     updateDisplay(newDisplay);
+}
+
+function calculate() {
+    let secondValue = display.innerText;
+    console.log(firstValue, operator, secondValue)
+    if (firstValue && operator && secondValue) {
+        const result = eval(`${firstValue} ${operator} ${secondValue}`);
+        updateDisplay(result);
+        firstValue = '';
+        console.log(result);
+    }
 }

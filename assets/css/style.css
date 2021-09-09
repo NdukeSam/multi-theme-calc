@@ -173,22 +173,13 @@ input[value="-1"]{
 .btn{
     background-color: #eae3db;
     color: #3b4664;
-    padding: 15px;
-    margin: 12px 12px;
+    padding: 10px;
     text-align: center;
     border-radius: 12px;
-    cursor: pointer;
-
-}
-
-.btn {
+    cursor: pointer;   
     font-family: 'Spartan', sans-serif;
     font-size: 29px;
-}
 
-.is-depressed{
-    opacity: 0.7;
-    box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
 }
 
 .btn_del, .btn_reset{
@@ -201,19 +192,15 @@ input[value="-1"]{
     color: #eae3db;
 }
 
+.btn_reset, .btn_equals{
+    grid-column: span 2;
+}
+
 #btn_area{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2px 2px;
-    margin: 15px 10px 0px 10px;
-}
-
-.last_row{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    grid-gap: 5px;
-
+    grid-gap: 10px 15px;
+    padding: 12px; 
 }
 
 .btn_area{
@@ -226,6 +213,9 @@ input[value="-1"]{
 
 /********* MEDIA QUERIES *********/
 @media screen and (max-width: 780px) {
-    .centered{width: 80%;}  
+    .centered{
+        width: 80%;
+        /* height: ; */
+    }  
 
 }

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,18 +58,13 @@
         <button class="btn digits" value="0">0</button>
         <button class="btn operators" value="/" >/</button>
         <button class="btn operators" value="*">&times;</button>
-      </section>
-      <div class="last_row">
         <button class="btn btn_reset" onclick="resetScreen()">RESET</button>
-        <button class="btn btn_equals equal" >=</button>
-      </div>
+        <button class="btn btn_equals equal" onclick="calculate()" >=</button>
+      </section>
     </section>
     </div>
 
   </div>
-
-  <iframe style="padding: 50px; width: auto"  src="https://open.spotify.com/embed/track/48xkeL7pEY4x2q2sz1vLMD" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
 
   
   <div class="attribution">
