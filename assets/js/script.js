@@ -81,7 +81,7 @@ for (const optor of operators) {
     optor.addEventListener('click', e => {
         calculate();
         operator = e.target.value;
-        console.log(operator);
+        // console.log(operator);
         resetFirstValue = true;
     });
 }
@@ -94,7 +94,7 @@ function writeDigit(value) {
     let newValue = 0;
     let previousValue = Number(display.innerText); 
     newValue = previousValue === 0 && value !=`${value}.` && value < 1 ? value : display.innerText += value;
-    console.log(firstValue, operator, secondValue);
+    // console.log(firstValue, operator, secondValue);
     updateDisplay(newValue);
 }
 
@@ -139,10 +139,10 @@ function calculate() {
     if (firstValue && operator && secondValue) {
         console.log(typeof firstValue)
         firstValue.replaceAll(',', '')
-        console.log(firstValue)
+        // console.log(firstValue)
         const result = eval(`${Number(firstValue.replaceAll(',', ''))} ${operator} ${Number(secondValue.replaceAll(',', ''))}`);
         updateDisplay(result);
         firstValue = '';
-        console.log(result);
+        // console.log(result);
     }
 }
