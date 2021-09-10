@@ -88,24 +88,19 @@ for (const optor of operators) {
 
 function writeDigit(value) {
     console.log(value);
-    if (value === '.') {
-        if (display.innerText === '.') {
-            return false;
-        }
-    }else{
-        value = Number(value);
-    }
+    if (value === '.' && display.innerText.includes('.') ) return 
+    
     console.log(value);
     let newValue = 0;
     let previousValue = Number(display.innerText); 
-    newValue = previousValue === 0 && value !='0.' && value < 1 ? value : display.innerText += value;
+    newValue = previousValue === 0 && value !=`${value}.` && value < 1 ? value : display.innerText += value;
     console.log(firstValue, operator, secondValue);
-
     updateDisplay(newValue);
 }
 
 function updateDisplay(value) {
-    display.innerText = value;
+    // display.innerText = value;
+    display.innerText = addPunctuation(value);
 }
 
 function resetScreen() {
@@ -118,11 +113,34 @@ function del() {
     updateDisplay(newDisplay);
 }
 
+function addPunctuation(value) {
+    value = String(value)
+    value = value.replaceAll(',', '')
+    let array = value.toString().split("");
+    let output = "";
+    let first = true;
+    for (let i = array.length - 1; i >= 0; i--) {
+        if ((array.length-i-1) % 3 === 0) {
+            if (first) {
+            first = false;
+            }else{
+            output = "," + output;
+            }
+        }
+        output = array[i] + output;
+    }
+    return output;
+}
+
+
 function calculate() {
     let secondValue = display.innerText;
-    console.log(firstValue, operator, secondValue)
+    console.log(firstValue, operator, secondValue, typeof firstValue)
     if (firstValue && operator && secondValue) {
-        const result = eval(`${firstValue} ${operator} ${secondValue}`);
+        console.log(typeof firstValue)
+        firstValue.replaceAll(',', '')
+        console.log(firstValue)
+        const result = eval(`${Number(firstValue.replaceAll(',', ''))} ${operator} ${Number(secondValue.replaceAll(',', ''))}`);
         updateDisplay(result);
         firstValue = '';
         console.log(result);
